@@ -33,5 +33,18 @@ describe('ticketListReducer', () => {
       }
     });
   });
-  
+
+  test('Should successfully delete a ticket', () => {
+    action = {
+      type: 'DELETE_TICKET',
+      id: 1
+    };
+    expect(ticketListReducer(currentState, action)).toEqual({
+    2: {names: 'Jasmine and Justine',
+      location: '2a',
+      issue: 'Reducer has side effects.',
+      id:2 }
+    });
+  });
+
 });
